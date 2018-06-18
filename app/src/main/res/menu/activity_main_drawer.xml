@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/myLeads"
+            android:icon="@drawable/ic_mylead"
+            android:title="My Leads" />
+        <item
+            android:id="@+id/myAccount"
+            android:icon="@drawable/ic_myaccount"
+            android:title="My Account" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_invite_earn"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/signOut"
+            android:icon="@drawable/ic_signout"
+            android:title="Sign Out" />
+
+    </group>
+
+
+
+</menu>

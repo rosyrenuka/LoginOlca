@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#007FFF</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="pink">#FF4081</color>
+    <color name="lightBlue">#007FFF</color>
+    <color name="skyBlue">#87CEEB</color>
+    <color name="vanilla">#F3E5AB</color>
+
+
+
+    <color name="dark_blue">#23283a</color>
+    <color name="dark_pink">#fe104d</color>
+
+
+    <color name="pinkRuby">#E0115F</color>
+    <color name="greenPastel">#03C03C</color>
+
+
+</resources>

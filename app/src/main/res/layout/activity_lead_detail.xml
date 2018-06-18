@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.innovex.LeadDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#EEEEEE"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/lightBlue"
+            android:elevation="4dp"
+            app:titleTextColor="#fff"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="hsdkjfbdskjfcbdsnbcnsmxbcnsnxbc nxnmxbcnxvcnbxvcnbvxncbvxnbcvxnbcvx"
+            android:textSize="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="#EEEEEE"
+            android:layout_marginRight="10dp"
+            android:id="@+id/detail"
+            android:layout_height="55dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="5dp"
+            android:background="#EEEEEE"
+            android:layout_marginLeft="10dp"
+            android:layout_height="45dp">
+
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:id="@+id/datetime"
+                android:layout_marginTop="15dp"
+                android:background="#EEEEEE"
+                android:src="@drawable/ic_datetime"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:textSize="13dp"
+                android:layout_marginTop="13dp"
+                android:id="@+id/datetime_details"
+                android:layout_weight="3"
+                android:text="Upload Date : 20 Nov,2017"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:background="@drawable/buttonstylepink"
+                android:layout_height="28dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="10dp"
+                android:textSize="10dp"
+                android:textColor="#fff"
+                android:text="Electrical"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#616161">
+        </LinearLayout>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    android:layout_marginTop="15dp"
+    android:textStyle="bold"
+    android:layout_marginLeft="10dp"
+    android:text="VIDEOS"
+    android:textSize="18dp"
+    />
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_marginTop="13dp"
+     android:layout_height="wrap_content">
+
+     <ImageView
+         android:layout_width="0dp"
+         android:layout_weight="1"
+         android:src="@drawable/ic_video"
+         android:layout_height="25dp" />
+    <TextView
+    android:layout_width="0dp"
+        android:textSize="17dp"
+    android:layout_weight="4"
+        android:textColor="#BF360C"
+    android:text="quilink-45612278687651.mp4"
+    android:layout_height="30dp" />
+
+ </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_video"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:textSize="17dp"
+                android:textColor="#BF360C"
+                android:text="quilink-45612278682321.mp4"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="18dp"
+            android:textStyle="bold"
+            android:text="PHOTOS"
+            />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:id="@+id/photoRecyclerview"
+        android:layout_height="400dp"></android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@color/lightBlue"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="60dp"
+           android:padding="7dp"
+            android:paddingTop="6dp"
+            android:layout_marginTop="11dp"
+            android:text="COMPLETE TASK"
+            android:textColor="#fff"
+           android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:padding="3dp"
+            android:paddingTop="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:paddingRight="5dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
