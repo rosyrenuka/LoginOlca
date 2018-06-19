@@ -20,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,14 @@ public class LeadDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_main);
+
+
         setContentView(R.layout.activity_lead_detail);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -68,8 +78,7 @@ public class LeadDetail extends AppCompatActivity {
    detail.setText("General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation");
         photosAdapter adapter = new photosAdapter(this);
 
-
-       photosRecyclerView .setItemAnimator(new DefaultItemAnimator());
+        photosRecyclerView .setItemAnimator(new DefaultItemAnimator());
         photosRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
        // photosRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         photosRecyclerView.addItemDecoration(new DividerItemDecoration(this , DividerItemDecoration.VERTICAL));

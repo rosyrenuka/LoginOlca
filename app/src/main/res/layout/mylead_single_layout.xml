@@ -1,83 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 
- <LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:orientation="vertical"
     android:background="#ECEFF1"
     android:layout_marginTop="2dp"
-    android:layout_height="match_parent">
-
-
-
-
+    android:layout_height="135dp">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:text="QSN:5214236"
-        android:background="#EEEEEE"
         android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:textSize="16dp"
-        android:layout_marginTop="12dp"
+        android:textSize="17dp"
+        android:layout_marginTop="14dp"
         android:id="@+id/qsn"
         android:layout_height="25dp" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:text="hsdkjfbdskjfcbdsnbcnsmxbcnsnxbc nxnmxbcnxvcnbxvcnbvxncbvxnbcvxnbcvx"
-        android:textSize="16dp"
-        android:layout_marginLeft="10dp"
-        android:background="#EEEEEE"
-        android:layout_marginRight="10dp"
+        android:text="General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation"
+        android:textSize="17dp"
+        android:layout_marginTop="38dp"
         android:id="@+id/detail"
-        android:layout_height="55dp" />
+        android:layout_height="wrap_content" />
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginRight="5dp"
-        android:background="#EEEEEE"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="107dp"
         android:layout_height="45dp">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="0.3"
             android:id="@+id/attach"
-            android:background="#EEEEEE"
             android:src="@drawable/ic_attachment"
             android:layout_height="20dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:textSize="11dp"
+            android:textSize="14dp"
+            android:layout_marginLeft="3dp"
             android:id="@+id/attach_detail"
-            android:background="#EEEEEE"
             android:layout_weight="2.3"
-            android:text="2 Videos, 6 Photos"/>
 
+            android:text="2 Videos,6 Photos"/>
 
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="0.3"
             android:id="@+id/datetime"
-            android:background="#EEEEEE"
             android:src="@drawable/ic_datetime"
             android:layout_height="20dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="#EEEEEE"
-            android:textSize="11dp"
+            android:textSize="14dp"
+            android:layout_marginLeft="3dp"
             android:id="@+id/datetime_details"
-            android:layout_weight="3"
-            android:text="Upload Date : 20 Nov,2017"/>
+            android:layout_weight="3.2"
+            android:text="Upload Date: 20 Nov,2017"/>
     </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>

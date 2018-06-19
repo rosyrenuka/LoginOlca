@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:id="@+id/leadRecyclerview"
             android:background="#EEEEEE"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content">
 
         </android.support.v7.widget.RecyclerView>

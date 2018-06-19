@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
+
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.replace(R.id.container, new HomeFragment());
+        tx.commit();
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -66,8 +73,12 @@ public class MainActivity extends AppCompatActivity
 //            return true;
 //        }
 
+
+
+
         return super.onOptionsItemSelected(item);
     }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -75,25 +86,38 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.home) {
-
-  setTitle(" ");
-            Fragment homeFragment=new HomeFragment();
-          setFragment(homeFragment);
+        setTitle(" ");
+        Fragment homeFragment2=new HomeFragment();
+        setFragment(homeFragment2);
 
 
-        } else if (id == R.id.myLeads) {
-            setTitle("My Leads");
-            Fragment myLeadFragment = new MyLeadsFragment();
-            setFragment(myLeadFragment);
 
-        } else if (id == R.id.myAccount) {
+        switch(id){
 
-        } else if (id == R.id.share) {
+            case R.id.home:
+                setTitle(" ");
+                Fragment homeFragment=new HomeFragment();
+                setFragment(homeFragment);
+                break;
 
-        } else if (id == R.id.signOut) {
+            case R.id.myLeads:
+                setTitle("My Leads");
+                Fragment myLeadFragment = new MyLeadsFragment();
+                setFragment(myLeadFragment);
+                break;
+
+            case R.id.myAccount:
+
+
+            case R.id.share:
+
+
+
+
+            case R.id.signOut:
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

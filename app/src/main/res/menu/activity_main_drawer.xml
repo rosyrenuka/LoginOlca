@@ -3,31 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
         <item
             android:id="@+id/home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
+
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+
+
         <item
             android:id="@+id/myLeads"
             android:icon="@drawable/ic_mylead"
             android:title="My Leads" />
-        <item
-            android:id="@+id/myAccount"
-            android:icon="@drawable/ic_myaccount"
-            android:title="My Account" />
+
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group3">
+
+       <item android:id="@+id/myAccount"
+        android:icon="@drawable/ic_myaccount"
+        android:title="My Account" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group4">
         <item
             android:id="@+id/share"
             android:icon="@drawable/ic_invite_earn"
             android:title="Share App" />
 
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group5">
+
         <item
             android:id="@+id/signOut"
             android:icon="@drawable/ic_signout"
             android:title="Sign Out" />
-
     </group>
-
 
 
 </menu>

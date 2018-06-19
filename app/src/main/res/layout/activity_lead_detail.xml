@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#EEEEEE"
     android:layout_height="match_parent"
     tools:context="com.example.hp.innovex.LeadDetail">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:background="#EEEEEE"
+        android:descendantFocusability="blocksDescendants"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="60dp"
             android:background="@color/lightBlue"
             android:elevation="4dp"
             app:titleTextColor="#fff"
@@ -24,14 +26,14 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="hsdkjfbdskjfcbdsnbcnsmxbcnsnxbc nxnmxbcnxvcnbxvcnbvxncbvxnbcvxnbcvx"
+            android:text="General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation"
             android:textSize="17dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="75dp"
             android:background="#EEEEEE"
             android:layout_marginRight="10dp"
             android:id="@+id/detail"
-            android:layout_height="55dp" />
+            android:layout_height="wrap_content" />
 
 
         <LinearLayout
@@ -39,8 +41,9 @@
             android:orientation="horizontal"
             android:layout_marginRight="5dp"
             android:background="#EEEEEE"
+            android:layout_marginTop="150dp"
             android:layout_marginLeft="10dp"
-            android:layout_height="45dp">
+            android:layout_height="wrap_content">
 
 
 
@@ -48,28 +51,27 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
                 android:id="@+id/datetime"
-                android:layout_marginTop="15dp"
                 android:background="#EEEEEE"
                 android:src="@drawable/ic_datetime"
-                android:layout_height="20dp" />
+                android:layout_height="25dp" />
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="25dp"
-                android:textSize="13dp"
-                android:layout_marginTop="13dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
                 android:id="@+id/datetime_details"
                 android:layout_weight="3"
-                android:text="Upload Date : 20 Nov,2017"/>
+                android:text="Upload Date :20 Nov,2017"/>
 
 
             <Button
                 android:layout_width="wrap_content"
                 android:background="@drawable/buttonstylepink"
-                android:layout_height="28dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="10dp"
-                android:textSize="10dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="12dp"
                 android:textColor="#fff"
                 android:text="Electrical"
                 />
@@ -79,7 +81,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="195dp"
             android:background="#616161">
         </LinearLayout>
 
@@ -87,7 +89,7 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="30dp"
-    android:layout_marginTop="15dp"
+    android:layout_marginTop="210dp"
     android:textStyle="bold"
     android:layout_marginLeft="10dp"
     android:text="VIDEOS"
@@ -96,7 +98,7 @@
 
  <LinearLayout
      android:layout_width="match_parent"
-     android:layout_marginTop="13dp"
+     android:layout_marginTop="245dp"
      android:layout_height="wrap_content">
 
      <ImageView
@@ -116,7 +118,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="277dp"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -140,7 +142,7 @@
             android:layout_height="30dp"
             android:textSize="18dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="330dp"
             android:textStyle="bold"
             android:text="PHOTOS"
             />
@@ -148,13 +150,14 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:id="@+id/photoRecyclerview"
+        android:layout_marginTop="365dp"
         android:layout_height="400dp"></android.support.v7.widget.RecyclerView>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="700dp"
         android:background="@color/lightBlue"
         android:layout_height="wrap_content">
 
@@ -187,10 +190,6 @@
     </LinearLayout>
 
 
-
-
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>
