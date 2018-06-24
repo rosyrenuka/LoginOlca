@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:background="#007FFF"
+            android:id="@+id/my_lead_layout"
             android:layout_height="52dp">
 
             <ImageView
@@ -79,7 +80,7 @@
             android:layout_marginTop="13dp"
             android:layout_marginLeft="13dp"
             android:textStyle="bold"
-            android:text="My  Leads"
+            android:text="All Leads"
             android:textSize="21dp"
             android:textColor="#fff"
             />

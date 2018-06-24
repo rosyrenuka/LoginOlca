@@ -12,6 +12,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -30,88 +31,106 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+
 public class MyLeadsFragment extends Fragment {
 
-
     RecyclerView MyLeadRecyclerView;
-   public  MyLeadRecyclerAdapter myLeadRecyclerAdapter;
+   public  MyLeadsAdapter myLeadRecyclerAdapter;
+
     ImageView backArrow;
     ImageView filter;
     LinearLayout layout_filterClicked;
-    MyLeadRecyclerAdapter.onMyLeadClick onMyLeadClick;
     PopupMenu popup;
     ArrayList<DataLead> listOriginal=new ArrayList<>();
     ArrayList<DataLead> list = new ArrayList<>();
-     String list_show="";
+    MyLeadsAdapter.MyLeadItemClicked listener;
+    ImageView backArrow1;
+    LinearLayout my_lead_layout;
+
+    public static int state=0;
 
     public MyLeadsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
        View view=  inflater.inflate(R.layout.fragment_my_leads, container, false);
-       //data=new DataLead();
-
        MyLeadRecyclerView = view.findViewById(R.id.leadRecyclerview);
-       backArrow=view.findViewById(R.id.back_arrow);
-       layout_filterClicked=view.findViewById(R.id.layout_filterClicked);
-       filter=view.findViewById(R.id.filter);
 
-        // for dummy arguments
-
-        for(int i=0;i<10;i++){
-
-          DataLead d = new DataLead(true);
-          String detail = d.getDetail();
-          String qsn=d.getQsn();
-          String video=d.getVideo();
-          String upload=d.getUploadPhoto();
-          if(i==3||i==4||i==8||i==6||i==9||i==0){
-            d.setEnable(false);
-              listOriginal.add(d);
-              list.add(d);
-          }
-          else{
-              d.setEnable(true);
-              listOriginal.add(d);
-              list.add(d);
-          }
-        }
-           list_show="LOAD";
-
-    myLeadRecyclerAdapter = new MyLeadRecyclerAdapter(new MyLeadRecyclerAdapter.onMyLeadClick() {
-          @Override
-           public void onLeadClick(int position) {
-
-              DataLead data=new DataLead(true);
-              data=list.get(position);
-               Intent intent =new Intent(getContext(),LeadDetail.class);
-             intent.putExtra("object",data);
-              startActivity(intent);
-
-           }
-       },getContext(), list,list_show);
+       my_lead_layout=view.findViewById(R.id.my_lead_layout);
 
         MyLeadRecyclerView .setItemAnimator(new DefaultItemAnimator());
         MyLeadRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         MyLeadRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+
+       backArrow=view.findViewById(R.id.back_arrow);
+       backArrow1=view.findViewById(R.id.back_arrow1);
+
+       layout_filterClicked=view.findViewById(R.id.layout_filterClicked);
+       filter=view.findViewById(R.id.filter);
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(false));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(false));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(false));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(true));
+        listOriginal.add(new DataLead(false));
+        list.clear();
+        for(int i=0;i<listOriginal.size();i++)
+        {
+            list.add(listOriginal.get(i));
+        }
+        myLeadRecyclerAdapter=new MyLeadsAdapter(list, getContext(), new MyLeadsAdapter.MyLeadItemClicked() {
+            @Override
+            public void LeadItemClick(int position) {
+                Intent intent = new Intent(getContext(),LeadDetail.class);
+                intent.putExtra("MyClass", list.get(position));
+                startActivity(intent);
+                //  Toast.makeText(getContext(), "inside FRAGMENT clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
         MyLeadRecyclerView.setAdapter(myLeadRecyclerAdapter);
         myLeadRecyclerAdapter.notifyDataSetChanged();
+        Log.e("TAG", "onCreateView: "+list.size() );
+        // for dummy arguments
 
-
+          // list_show="LOAD";
 
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
 
+        backArrow1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                list.clear();
+                state=4;
+                for(int i=0;i<listOriginal.size();i++)
+                {
+                    list.add(listOriginal.get(i));
+                }
+
+                myLeadRecyclerAdapter.notifyDataSetChanged();
+                layout_filterClicked.setVisibility(View.GONE);
+                my_lead_layout.setVisibility(View.VISIBLE);
+
+
+//                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
 
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,17 +146,24 @@ public class MyLeadsFragment extends Fragment {
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
 
+                        my_lead_layout.setVisibility(View.GONE);
+                        layout_filterClicked.setVisibility(View.VISIBLE);
+
                         switch(item.getItemId()) {
 
                             case R.id.one:
                             {
                                 list.clear();
-                                list_show="OPEN";
-                                for(int i=0;i<listOriginal.size();i++){
-                                    if(listOriginal.get(i).isEnable()){
+
+                                for(int i=0;i<listOriginal.size();i++)
+                                {
+                                    if(listOriginal.get(i).isEnable())
+                                    {
                                         list.add(listOriginal.get(i));
-                                   }
+                                    }
                                 }
+                                Log.e("TAG", "onMenuItemClick:1 "+list.size() );
+                                state=0;
                                 myLeadRecyclerAdapter.notifyDataSetChanged();
                                return true;
                             }
@@ -146,18 +172,28 @@ public class MyLeadsFragment extends Fragment {
                             case R.id.two: {
 
                                 list.clear();
-                                list_show="CLOSED";
-                                for(int i=0;i<listOriginal.size();i++){
-                                    if(!listOriginal.get(i).isEnable()){
+                                for(int i=0;i<listOriginal.size();i++)
+                                {
+                                    if(!listOriginal.get(i).isEnable())
+                                    {
                                         list.add(listOriginal.get(i));
                                     }
                                 }
+                                Log.e("TAG", "onMenuItemClick:2 "+list.size() );
+                                state=1;
                                 myLeadRecyclerAdapter.notifyDataSetChanged();
                                 return true;
                             }
 
                             case R.id.three: {
-                                Toast.makeText(getContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
+                                list.clear();
+                                for(int i=0;i<listOriginal.size();i++)
+                                {
+                                    list.add(listOriginal.get(i));
+                                }
+                                Log.e("TAG", "onMenuItemClick:3 "+list.size() );
+                                state =2;
+                                myLeadRecyclerAdapter.notifyDataSetChanged();
                             }
                                 return true;
                         }
@@ -166,12 +202,10 @@ public class MyLeadsFragment extends Fragment {
                     }
                 });
                 popup.show(); //showing popup menu
-            }
+               }
         });
-
-       return view;
+        return view;
     }
-
 
     @Override
     public void onResume() {

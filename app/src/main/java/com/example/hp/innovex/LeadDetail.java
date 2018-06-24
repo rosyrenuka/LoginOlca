@@ -1,5 +1,6 @@
 package com.example.hp.innovex;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -17,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -41,18 +43,16 @@ public class LeadDetail extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+
         Intent intent = getIntent();
 
         DataLead dene = (DataLead) intent.getSerializableExtra("object");
-
-
         setContentView(R.layout.activity_lead_detail);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        getSupportActionBar().setTitle(dene.getQsn()+"");
-
+        getSupportActionBar().setTitle("QSN:5214236");
 
         Drawable dr = getResources().getDrawable(R.drawable.ic_backarrow);
         Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
@@ -77,18 +77,30 @@ public class LeadDetail extends AppCompatActivity {
             }
         });
 
-
-
         detail=findViewById(R.id.detail);
         photosRecyclerView=findViewById(R.id.photoRecyclerview);
    detail.setText("General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation");
         photosAdapter adapter = new photosAdapter(this);
 
         photosRecyclerView .setItemAnimator(new DefaultItemAnimator());
-        photosRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+
+        int mNoOfColumns = calculateNoOfColumns(getApplicationContext());
+
+        photosRecyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
+
+
        // photosRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         photosRecyclerView.addItemDecoration(new DividerItemDecoration(this , DividerItemDecoration.VERTICAL));
         photosRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
+
+    public static int calculateNoOfColumns(Context context) {
+            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+            float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+            int noOfColumns = (int) (dpWidth / 110);
+            return noOfColumns;
+
+    }
+
 }
