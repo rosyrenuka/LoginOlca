@@ -1,25 +1,111 @@
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.hp.innovex.MyLeadsFragment">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:background="#EEEEEE"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:id="@+id/leadRecyclerview"
-            android:background="#EEEEEE"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:background="#007FFF"
+            android:layout_height="52dp">
 
-        </android.support.v7.widget.RecyclerView>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:padding="7dp"
+                android:id="@+id/back_arrow"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:src="@drawable/ic_backarrow"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="40dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="13dp"
+                android:textStyle="bold"
+                android:text="My  Leads"
+                android:textSize="21dp"
+                android:textColor="#fff"
+                />
+
+            <ImageView
+                android:layout_marginTop="11dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:id="@+id/filter"
+                android:padding="5dp"
+                android:src="@drawable/ic_filter"
+                />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#007FFF"
+        android:visibility="gone"
+        android:id="@+id/layout_filterClicked"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:padding="7dp"
+            android:id="@+id/back_arrow1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.6"
+            android:src="@drawable/ic_backarrow"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="40dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="13dp"
+            android:textStyle="bold"
+            android:text="My  Leads"
+            android:textSize="21dp"
+            android:textColor="#fff"
+            />
 
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="57dp"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/leadRecyclerview"
+                android:background="#EEEEEE"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+    </FrameLayout>
+
+</RelativeLayout>

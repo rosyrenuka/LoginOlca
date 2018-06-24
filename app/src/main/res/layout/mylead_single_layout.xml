@@ -1,69 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:orientation="vertical"
     android:background="#ECEFF1"
+    android:id="@+id/relative_parent"
     android:layout_marginTop="2dp"
     android:layout_height="135dp">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:text="QSN:5214236"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        android:layout_marginTop="14dp"
-        android:id="@+id/qsn"
-        android:layout_height="25dp" />
+        android:orientation="vertical"
+        android:background="#ECEFF1"
+        android:visibility="visible"
+        android:id="@+id/relative_layout"
+        android:layout_marginTop="2dp"
+        android:layout_height="135dp"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation"
-        android:textSize="17dp"
-        android:layout_marginTop="38dp"
-        android:id="@+id/detail"
-        android:layout_height="wrap_content" />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="107dp"
-        android:layout_height="45dp">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:id="@+id/attach"
-            android:src="@drawable/ic_attachment"
-            android:layout_height="20dp" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="25dp"
-            android:textSize="14dp"
-            android:layout_marginLeft="3dp"
-            android:id="@+id/attach_detail"
-            android:layout_weight="2.3"
-
-            android:text="2 Videos,6 Photos"/>
-
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:id="@+id/datetime"
-            android:src="@drawable/ic_datetime"
-            android:layout_height="20dp" />
+            android:layout_width="wrap_content"
+            android:text="QSN:5214236"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_marginTop="14dp"
+            android:id="@+id/qsn"
+            android:layout_height="25dp" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="25dp"
-            android:textSize="14dp"
-            android:layout_marginLeft="3dp"
-            android:id="@+id/datetime_details"
-            android:layout_weight="3.2"
-            android:text="Upload Date: 20 Nov,2017"/>
-    </LinearLayout>
-</RelativeLayout>
+            android:layout_width="wrap_content"
+            android:text="General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation"
+            android:textSize="17dp"
+            android:layout_marginTop="38dp"
+            android:id="@+id/detail"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="107dp"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:id="@+id/attach"
+                android:src="@drawable/ic_attachment"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:textSize="14dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/attach_detail"
+                android:layout_weight="2.3"
+                android:text="2 Videos,6 Photos"/>
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:id="@+id/datetime"
+                android:src="@drawable/ic_datetime"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:textSize="14dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/datetime_details"
+                android:layout_weight="3.2"
+                android:text="Upload Date: 20 Nov,2017"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_marginTop="2dp"
+     android:visibility="gone"
+     android:id="@+id/close_layout"
+     android:layout_marginLeft="120dp"
+     android:layout_height="132dp">
+     <TextView
+         android:layout_width="match_parent"
+         android:id="@+id/closed"
+         android:text="Closed"
+         android:textStyle="bold"
+         android:textSize="20dp"
+         android:layout_marginTop="50dp"
+         android:gravity="center_horizontal"
+         android:textColor="#4CAF50"
+         android:layout_height="40dp" />
+ </LinearLayout>
+
+
+</FrameLayout>

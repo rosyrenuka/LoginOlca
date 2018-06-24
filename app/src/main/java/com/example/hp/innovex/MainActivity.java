@@ -1,5 +1,6 @@
 package com.example.hp.innovex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +104,6 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.myLeads:
-                setTitle("My Leads");
                 Fragment myLeadFragment = new MyLeadsFragment();
                 setFragment(myLeadFragment);
                 break;
@@ -127,8 +129,11 @@ public class MainActivity extends AppCompatActivity
     private void setFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction().addToBackStack("MY_FRAG_TAG");
         fragmentTransaction.replace(R.id.container,fragment).commit();
 
     }
+
+
+
 }

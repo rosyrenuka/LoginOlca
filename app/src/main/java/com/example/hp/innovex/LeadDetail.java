@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -40,13 +41,17 @@ public class LeadDetail extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+
+        DataLead dene = (DataLead) intent.getSerializableExtra("object");
+
 
         setContentView(R.layout.activity_lead_detail);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        getSupportActionBar().setTitle("  QSN: 5214236");
+        getSupportActionBar().setTitle(dene.getQsn()+"");
 
 
         Drawable dr = getResources().getDrawable(R.drawable.ic_backarrow);
@@ -72,7 +77,8 @@ public class LeadDetail extends AppCompatActivity {
             }
         });
 
-        Intent intent = getIntent();
+
+
         detail=findViewById(R.id.detail);
         photosRecyclerView=findViewById(R.id.photoRecyclerview);
    detail.setText("General Electrical work light fitting, celing, fan, installation, MCB repair, TV Installation");
