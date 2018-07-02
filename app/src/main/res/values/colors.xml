@@ -9,7 +9,19 @@
     <color name="lightBlue">#007FFF</color>
     <color name="skyBlue">#87CEEB</color>
     <color name="vanilla">#F3E5AB</color>
+    <color name="purple">#AB47BC</color>
 
+    <color name="purple_light">#BA68C8</color>
+
+    <color name="orangew">#FF6D00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#000</color>
+    <color name="gradStart">#19AA8B</color>
+    <color name="gradStop">#23A7D8</color>
+
+
+    <color name="login_LightBlue">#05c3f9</color>
+    <color name="login_darkBlue">#0691b8</color>
 
 
     <color name="dark_blue">#23283a</color>

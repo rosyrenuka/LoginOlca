@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <!-- Base application theme. -->
@@ -24,6 +24,13 @@
         <item name="android:popupBackground">@android:color/white</item>
         <item name="android:textColor">#FF01F0</item>
         <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="SignUpActivityTheme" parent="Theme.AppCompat.Light.NoActionBar" tools:ignore="DuplicateDefinition">
+        <item name="colorPrimaryDark">@color/gradStart</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 
